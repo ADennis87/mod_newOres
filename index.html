@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Mod newores : BlockBrokenHeartOre" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mod newores</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ninjapancakes87/mod_newOres">View on GitHub</a>
+
+          <h1 id="project_title">Mod newores</h1>
+          <h2 id="project_tagline">BlockBrokenHeartOre</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ninjapancakes87/mod_newOres/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ninjapancakes87/mod_newOres/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>package net.minecraft.src;</p>
+
+<p>import java.util.Random;</p>
+
+<p>public class BlockBrokenHeartOre extends Block
+{</p>
+
+<pre><code>protected BlockBrokenHeartOre(int i, int j)
+{
+    super(i,j,Material.rock);
+}
+public int idDropped(int i, Random random)
+{
+    return mod_newOres.BrokenHeart.shiftedIndex;
+}
+public int quantityDropped(Random random) {
+    return 1;
+}
+public void generateSurface(World world, Random rand, int y, int z) {
+    for (int a = 0; a &lt; 2; a++) {
+        int i = y + rand.nextInt(16);
+        int j = rand.nextInt(20);
+        int k = z + rand.nextInt(16);
+        (new WorldGenMinable(mod_newOres2.BHO.blockID, 15)).generate(world,
+                rand, i, j, k);}
+}
+public void mod_BlockBrokenHeartOre()
+{
+    ModLoader.registerBlock(mod_newOres2.BHO);
+    ModLoader.addName(mod_newOres2.BHO, "Broken Heart Ore");
+    mod_newOres2.BHO.blockIndexInTexture = ModLoader.addOverride("/terrain.png",
+            "/BrokenHeartOre.png");
+
+
+
+        }
+</code></pre>
+
+<p>}</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mod newores maintained by <a href="https://github.com/ninjapancakes87">ninjapancakes87</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
